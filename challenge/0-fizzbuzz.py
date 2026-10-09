@@ -1,29 +1,16 @@
-#!/usr/bin/python3
-import sys
-
-
 def fizzbuzz(n):
     for i in range(1, n + 1):
         if i % 3 == 0 and i % 5 == 0:
-            print("FizzBuzz", end=" ")
+            text = "FizzBuzz"
         elif i % 3 == 0:
-            print("Fizz", end=" ")
+            text = "Fizz"
         elif i % 5 == 0:
-            print("Buzz", end=" ")
+            text = "Buzz"
         else:
-            print(i, end=" ")
-    print()
+            text = str(i)
 
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit(1)
-
-    try:
-        number = int(sys.argv[1])
-    except ValueError:
-        sys.exit(1)
-
-    fizzbuzz(number)
-
-#test
+        # Only print a space if it's NOT the last number
+        if i < n:
+            print(text, end=" ")
+        else:
+            print(text)
